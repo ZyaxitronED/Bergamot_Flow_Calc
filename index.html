@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bergamot & Flow Oil Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="headerContainer">
+        <h1>Bergamot & Flow</h1>
+        <h2>Essential Oil Price Calculator</h2>
+    </div>
+
+    <!--This form creates issue with calculation due to JS gathering value of all inputs, including checkboxes-->
+    <!--FIXED-->
+    <form id="checkboxes" onchange="priceAddition()">
+        <input name="5amberbot" type="checkbox" id="5mlAmBot">
+        <label for="5amberbot">5ml Amber Bottle</label>
+        <br>
+        <input name="10amberbot" type="checkbox" id="10mlAmBot">
+        <label for="10amberbot">10ml Amber Bottle</label>
+        <br>
+        <input name="5rainbowbot" type="checkbox" id="5mlRainBot">
+        <label for="5rainbowbot">5ml Rainbow Bottle</label>
+        <br>
+        <input name="5label" type="checkbox" id="5mlLab">
+        <label for="5label">5ml Label</label>
+        <br>
+        <input name="10label" type="checkbox" id="10mlLab">
+        <label for="10label">10ml Label</label>
+        <br>
+        <input name="cotbag" type="checkbox" id="CotBag">
+        <label for="cotbag">Small Cotten Bag</label>
+        <br>
+        <input name="buscard" type="checkbox" id="BusCard">
+        <label for="buscard">Business Card</label>
+    </form>
+
+    <div>
+        <h3>Total Value of Added Oils:</h3>
+        <h4 id="totalValue">£ --</h4>
+    </div>
+    
+        <button id="button" onclick="formClone(); priceAddition()">Add Another Oil</button>
+    
+
+        <button type="button" id="removeButton" onclick="this.remove()">Remove Oil</button>
+
+    <div id="calculatorContainer">
+        <h5 id="price">Drops of <select id="oilType" onchange="priceGenerator()"></select> : <input id="dropInput" name="dropInput" type="number" placeholder="Enter Number of Drops" onchange="priceGenerator()"> Price = £ <input id="priceOutput" readonly></h5>
+    </div>
+
+    <div class="center">
+        <div class="collumn addedOils">
+            <h3>Added Oils:</h3>
+        </div>
+    </div>
+
+    <div class="center" id="addedOils">
+            <input id="valueKeeper" class="hiddenInput totalPrice">
+        <!--<div id="priceCollumn" class="collumn priceAddition" >Price:</div>-->
+        <!--<input id="valueKeeper" class="hiddenInpu totalPrice">-->
+    </div>
+
+    <!--testing with a form to see if linked labels and inputs will function with addition and subtraction when deleted
+        Attempting to clone whole form instead of individual labels and inputs; will require new function as to not ruin existing progress-->
+    <!--this.parentNode.remove() works to remove whole form
+        Must test to see if inputs can work for the final calculator-->
+    <!--success-->
+    <form id="formOils" class="center">
+        <label for="oil" id="label"></label>
+        <input name="oil" id="input" class="hiddenInput totalPrice" step=".01" min="0" readonly>
+        <button name="removeOil" class="removeOil" onclick="this.parentNode.remove(); priceAddition()">X</button>
+        <hr>
+    </form>
+    
+    <script src="script.js"></script>
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+</body>
+
+</html>

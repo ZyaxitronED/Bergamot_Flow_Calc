@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'BadScript';
+    src: url(fonts/BadScript-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Mistrully';
+    src: url(fonts/Mistrully.ttf) format('truetype');
+}
+
+body {
+    font-family: 'BadScript', sans-serif;
+}
+
+h1 {
+    font-family: 'Mistrully', sans-serif;
+}
+
+div#priceCollumn {
+    padding-left: 100px;
+}
+
+div#calculatorContainer {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.collumn {
+    display: inline-block;
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.removeOil {
+    visibility: hidden;
+
+    background-color: #dce6e0;
+    border: 2px solid #1e5234;
+    border-radius: 25px;
+    box-shadow: #1e5234 2px 2px 0 0;
+    color: #1e5234;
+    font-family: 'BadScript';
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bolder;
+    font-size: 8px;
+    padding: 0 5px;
+    text-align: center;
+    touch-action: manipulation;
+}
+
+.removeOil:hover {
+    background-color: #fff;
+}
+
+.removeOil:active {
+    box-shadow: #6a5d82 1px 1px 0 0;
+    border-color: #6a5d82;
+    color: #6a5d82;  
+}
+
+form#checkboxes {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+form#checkboxes label {
+    margin: 5px 25px 5px 0px;
+}
+
+/* CSS */
+button#button {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #dce6e0;
+  border: 2px solid #1e5234;
+  border-radius: 30px;
+  box-shadow: #1e5234 4px 4px 0 0;
+  color: #1e5234;
+  font-family: 'BadScript';
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0 10px;
+  line-height: 30px;
+  text-align: center;
+  touch-action: manipulation;
+}
+
+button#button:hover {
+  background-color: #fff;
+}
+
+button#button:active {
+  box-shadow: #6a5d82 2px 2px 0 0;
+  border-color: #6a5d82;
+  color: #6a5d82;
+}
+
+@media (min-width: 768px) {
+    button#button {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+hr {
+    width: 30%;
+}
