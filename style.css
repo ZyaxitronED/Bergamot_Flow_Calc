@@ -15,6 +15,10 @@ h1, h4 {
     font-family: 'Mistrully', sans-serif;
 }
 
+h4 {
+    font-size: large;
+}
+
 div#priceCollumn {
     padding-left: 100px;
 }
