@@ -71,12 +71,14 @@
     <!--this.parentNode.remove() works to remove whole form
         Must test to see if inputs can work for the final calculator-->
     <!--success-->
-    <form id="formOils" class="center">
-        <label for="oil" id="label"></label>
-        <input name="oil" id="input" class="hiddenInput totalPrice" step=".01" min="0" readonly>
-        <button name="removeOil" class="removeOil" onclick="this.parentNode.remove(); priceAddition()">X</button>
-        <hr>
-    </form>
+    <div id="formContainer">
+        <form id="formOils" class="center form" name="">
+            <label for="oil" id="label"></label>
+            <input name="oil" id="input" class="hiddenInput totalPrice" step=".01" min="0" readonly>
+            <button name="removeOil" class="removeOil" onclick="this.parentNode.remove(); priceAddition()">X</button>
+            <hr>
+        </form>
+    </div>
     
     <script src="script.js"></script>
     <script src='https://d3js.org/d3.v4.min.js'></script>
