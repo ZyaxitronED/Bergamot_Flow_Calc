@@ -281,7 +281,7 @@ function addOil() {
 //first test worked but if original clone is removed then user is unable to clone further forms -- FIXED
 
 //var formContainer = document.getElementById('formContainer');
-//var formName = document.getElementsByClassName('form');
+var formName = this.document.getElementsByClassName('form');
 //var formNameCheck = formName.includes(selectedValue);
 var form = document.getElementById('formOils');
 
@@ -289,7 +289,7 @@ function formClone() {
   var oilOptions = document.getElementById('oilType');
   var selectedValue = oilOptions.options[oilOptions.selectedIndex].text;
 
-  if (dropInput.value == "" /*|| formName == selectedValue*/) {
+  if (dropInput.value == "" || formName.name == selectedValue) {
 
     alert('Please fill in all of the fields before adding an oil.');
     return false;
@@ -307,6 +307,8 @@ function formClone() {
     clonedForm.querySelector('input').value = priceOutput.value;
     clonedForm.querySelector('button').style.visibility = 'visible';
     clonedForm.setAttribute('name', selectedValue);
+    console.log(formName.name);
+    console.log(selectedValue);
     
     return true;
 
