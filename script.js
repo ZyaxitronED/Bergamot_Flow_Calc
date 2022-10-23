@@ -285,6 +285,11 @@ var formName = this.document.getElementsByClassName('form');
 //var formNameCheck = formName.includes(selectedValue);
 var form = document.getElementById('formOils');
 
+//TEST - Variable returned undefined
+/*var formClass = $('.form').map(function(_, x) {
+  return x.name;
+}).get();*/
+
 function formClone() {
   var oilOptions = document.getElementById('oilType');
   var selectedValue = oilOptions.options[oilOptions.selectedIndex].text;
@@ -309,6 +314,8 @@ function formClone() {
     clonedForm.setAttribute('name', selectedValue);
     console.log(formName.name);
     console.log(selectedValue);
+    //console.log(formClass);
+
     
     return true;
 
@@ -410,3 +417,16 @@ for(i = 0; i < priceAddition.length; i++) {
     add += 0.20;
   }
 }*/
+
+//Created array that stores all names of cloned forms
+var array = Array();
+var x = 0;
+
+function add_element_to_array() {
+  var oilOptions = document.getElementById('oilType');
+  var selectedValue = oilOptions.options[oilOptions.selectedIndex].text;
+
+  array[x] = selectedValue;
+  console.log(array);
+  x++;
+};
