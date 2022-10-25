@@ -430,3 +430,15 @@ function add_element_to_array() {
   console.log(array);
   x++;
 };
+
+function checkArray() {
+  var oilOptions = document.getElementById('oilType');
+  var selectedValue = oilOptions.options[oilOptions.selectedIndex].text;
+
+  if (array.includes(selectedValue)) {
+    alert('This oil has already been added!');
+  }else{
+    formClone();
+    add_element_to_array();
+  };
+};
